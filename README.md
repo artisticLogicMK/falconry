@@ -23,6 +23,16 @@ Welcome to Falconry Github repository! A high-performance RSS reader with stunni
 ![Visual Studio Code](https://img.shields.io/badge/VS%20Code-0078d7.svg?style=for-the-badge&logo=visual-studio-code&logoColor=white)
 ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
+## Features
+- A visually captivating interface for an exceptional experience.
+- Stay effortlessly informed with auto-updated articles daily.
+- Add RSS feeds via links or discover from a curated list.
+- Switch between light and dark modes for a personalized experience.
+- Share your passion with others by sharing your public profile.
+- Access a beautiful settings page for a personalized experience.
+- Smooth user experience, making Falconry your go-to RSS reader.
+- And more...
+
 
 ## Getting Started
 Make sure to install the dependencies:
