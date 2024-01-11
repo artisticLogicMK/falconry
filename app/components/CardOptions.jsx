@@ -78,7 +78,11 @@ const CardOptions = ({ post, setPost }) => {
                             <Bookmark
                                 size={20}
                                 className={post.bookmarked ? 'active' : ''}
-                                onClick={updateBookmark}
+                                onClick={() => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    updateBookmark()
+                                }}
                             />
                         }
                     </Tippy>
@@ -90,7 +94,11 @@ const CardOptions = ({ post, setPost }) => {
                             <EyeSlash
                                 size={20}
                                 className={post.hide ? 'active' : ''}
-                                onClick={updateHidePost}
+                                onClick={() => {
+                                    e.preventDefault()
+                                    e.stopPropagation()
+                                    updateHidePost
+                                }}
                             />  
                         }
                     </Tippy>

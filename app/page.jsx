@@ -3,7 +3,7 @@ import Contents from "./contents"
 
 // define global meta data
 export const metadata = {
-  title: process.env.APP_NAME,
+  title: process.env.APP_NAME + ' - RSS Reader',
   description: 'Falconry: Your sleek RSS reader. Beautiful UI, easy feed organization, and daily updates. Elevate your news experience.',
   language: 'English',
   openGraph: {
