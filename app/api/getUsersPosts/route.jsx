@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server"
-import { decrypt } from "@/lib/encrypt"
 import connectDB, { closeDB } from "@/database/db"
-import { cookies } from 'next/headers'
 import Feed from "@/database/models/feedModel"
 const rssParser = require('rss-parser')
 import Post from "@/database/models/postModel"
@@ -45,7 +43,7 @@ export async function GET(request) {
         // if save is success
         return NextResponse.json({success: 'New Posts Added.'}, {status: 201})
     } catch (error) {
-        return NextResponse.json({error: 'Something went wrong.'}, {status: 200})
+        return NextResponse.json(error, {status: 200})
     }
 
     closeDB()
