@@ -89,7 +89,7 @@ const LandingPage = ({ showLannding }) => {
 
                     <div className="falconbio">
                         <p className="text-sm font-bold">Introducing, Falconry!</p>
-                        <p className="text-base">
+                        <p className="text-sm sm:text-base">
                             A highly performant RSS reader that combines stunning aesthetics with powerful features. Immerse yourself in its beautiful and elegant UI, effortlessly organizing feeds and exploring articles. Add feeds from any RSS link or discover from a curated list, and showcase your interests with a public profile. Falconry ensures a seamless user experience with daily auto-updated articles, making it the ultimate Falcon for your news hunting.
                             <TwitterLogo weight="fill" className="inline ml-2 -mt-1" />
                         </p>

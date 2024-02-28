@@ -21,21 +21,26 @@ export async function GET(request) {
             const feeds = await Feed.find({user: userId}).sort({ lastBuildDate: -1 }).select('_id link lastBuildDate')
 
             for (const feed of feeds) {
-                const fetchFeeds = await parser.parseURL(feed.link)
+                try {
+                    const fetchFeeds = await parser.parseURL(feed.link)
 
-                // fetching latest posts
-                const posts = fetchFeeds.items.slice(0, process.env.NO_OF_POSTS)
+                    // fetching latest posts
+                    const posts = fetchFeeds.items.slice(0, process.env.NO_OF_POSTS)
 
-                // iterate through posts and perform db insertion for each post
-                for (const post of posts) {
-                    // check if post already exists
-                    const findPost = await Post.findOne({user: userId, link: post.link})
+                    // iterate through posts and perform db insertion for each post
+                    for (const post of posts) {
+                        // check if post already exists
+                        const findPost = await Post.findOne({user: userId, link: post.link})
 
-                    if (!findPost) { // if it doesnt exist, proceed
-                        const createPost = constructPost(post, feed._id, userId)
+                        if (!findPost) { // if it doesnt exist, proceed
+                            const createPost = constructPost(post, feed._id, userId)
 
-                        await createPost.save()
+                            await createPost.save()
+                        }
                     }
+                } catch (err) {
+                    // if fetching feed fails, skip, then proceed with the next feed
+                    continue
                 }
             }
         }

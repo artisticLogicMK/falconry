@@ -24,17 +24,25 @@ const FeedCardItem = ({ keyValue, postData, user }) => {
     return colors[reverse[0]]
   }
 
-  const updateRead = async () => {
-    if (!postData.read && user.signedIn && user.data._id === postData.user) {
-      // if post not read and its the user of the post viewing, set to read
-      const req = await fetch('/api/post/updateRead', {
-          method: 'POST',
-          next: {revalidate: 0},
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            slug: post.slug
-          })
-      })
+  const updateRead = async (e) => {
+    console.log(e, e.target.id)
+    if (e.target.id === 'options') {
+      e.preventDefault()
+      return
+
+    } else {
+
+      if (!postData.read && user.signedIn && user.data._id === postData.user) {
+        // if post not read and its the user of the post viewing, set to read
+        const req = await fetch('/api/post/updateRead', {
+            method: 'POST',
+            next: {revalidate: 0},
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+              slug: post.slug
+            })
+        })
+      }
     }
   }
 
@@ -45,7 +53,7 @@ const FeedCardItem = ({ keyValue, postData, user }) => {
           prefetch={false}
           className='feedcon'
           target={path.includes('/u/') ? null : '_blank'}
-          onClick={updateRead}
+          onClick={(e) => updateRead(e)}
         >
           <div className='feed-items'>
             <div className='cover'>

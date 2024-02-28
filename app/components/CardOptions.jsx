@@ -4,9 +4,6 @@
 import Tippy from '@tippyjs/react'
 import { useState } from 'react'
 
-// components
-import { Dropdown, DropdownContent } from "./ui/Dropdown"
-
 // icons
 import { Bookmark, EyeSlash, SpinnerGap } from "@phosphor-icons/react"
 
@@ -55,55 +52,39 @@ const CardOptions = ({ post, setPost }) => {
     }
 
     return (
-            <Dropdown 
-                onClick={(e) => {
-                    e.preventDefault()
-                    e.stopPropagation()
-                }}
-                className='h-[16px]'
-                position='left'
-                trigger='clickStay'
+        <div className='opts'>
+            <div
+                id='options'
+                onClick={(e) => updateBookmark()}
             >
-                <div className='dots'>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+                <Tippy content={post.bookmarked ? 'Remove Bookmark' : 'Add Bookmark'}>
+                    {bkLoading ?
+                        <SpinnerGap size={20} className='loads' />
+                    :
+                        <Bookmark
+                            size={20}
+                            className={(post.bookmarked ? 'active' : '')+' pointer-events-none'}
+                        />
+                    }
+                </Tippy>
+            </div>
 
-                <DropdownContent className='[top:auto!important] [bottom:100%]'>
-                    <Tippy content={post.bookmarked ? 'Remove Bookmark' : 'Add Bookmark'}>
-                        {bkLoading ?
-                            <SpinnerGap size={20} className='loads' />
-                        :
-                            <Bookmark
-                                size={20}
-                                className={post.bookmarked ? 'active' : ''}
-                                onClick={() => {
-                                    e.preventDefault()
-                                    e.stopPropagation()
-                                    updateBookmark()
-                                }}
-                            />
-                        }
-                    </Tippy>
-
-                    <Tippy content={post.hide ? 'Unhide' : 'Hide'}>
-                        {hideLoading ?
-                            <SpinnerGap size={20} className='loads' />
-                        :
-                            <EyeSlash
-                                size={20}
-                                className={post.hide ? 'active' : ''}
-                                onClick={() => {
-                                    e.preventDefault()
-                                    e.stopPropagation()
-                                    updateHidePost
-                                }}
-                            />  
-                        }
-                    </Tippy>
-                </DropdownContent>
-            </Dropdown>
+            <div
+                id='options'
+                onClick={() => updateHidePost()}
+            >
+                <Tippy content={post.hide ? 'Unhide' : 'Hide'}>
+                    {hideLoading ?
+                        <SpinnerGap size={20} className='loads' />
+                    :
+                        <EyeSlash
+                            size={20}
+                            className={(post.hide ? 'active' : '')+' pointer-events-none'}
+                        />  
+                    }
+                </Tippy>
+            </div>
+        </div>
     )
 }
  

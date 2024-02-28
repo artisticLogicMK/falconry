@@ -53,13 +53,16 @@ main {
 .feed-items .info .top .dots span {
   @apply w-[3px] h-[3px] bg-black/70 dark:bg-white/70 rounded-full mr-1
 }
-.feed-items .info .top .content svg {
-  @apply first:mr-4 text-black/40 dark:text-white/40
+.feed-items .info .top .opts {
+  @apply flex items-center
 }
-.feed-items .info .top .content svg.active {
+.feed-items .info .top .opts div svg {
+  @apply first:mr-2.5 text-black/40 dark:text-white/40
+}
+.feed-items .info .top .opts div svg.active {
   @apply text-black/90 dark:text-white/90
 }
-.feed-items .info .top .content .loads {
+.feed-items .info .top .opts div .loads {
   @apply text-black/50 dark:text-white/50 animate-spin
 }
 
