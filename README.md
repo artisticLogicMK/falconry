@@ -90,4 +90,4 @@ Feel free to reach out with any questions or suggestions.
 
 <br>
 
-[![LICENSE - GPL 3](https://img.shields.io/badge/LICENSE-GPL_3-1769ff?style=for-the-badge)](/LICENSE)
+[![LICENSE - GPL 3](https://img.shields.io/badge/LICENSE-GPL_3-1769ff?style=for-the-badge)](/LICENSE) 
