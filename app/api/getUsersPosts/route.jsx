@@ -13,6 +13,8 @@ export async function GET(request) {
 
     let parser = new rssParser()
 
+    let userSuccess = []
+
     try {
         const users = await User.find({})
 
@@ -43,10 +45,12 @@ export async function GET(request) {
                     continue
                 }
             }
+
+            userSuccess.push(user.username+": was successfull.")
         }
 
         // if save is success
-        return NextResponse.json({success: 'New Posts Added.'}, {status: 201})
+        return NextResponse.json({success: 'New Posts Added.', userSuccess}, {status: 201})
     } catch (error) {
         return NextResponse.json(error, {status: 200})
     }
