@@ -5,7 +5,7 @@
 Welcome to Falconry Github repository! A highly-performant RSS reader with stunning aesthetics, elegant UI, easy feed organization, a public profile, and daily auto-updated articles for seamless news hunting, and more.
 
 
-[![View App - Falconry](https://img.shields.io/badge/View_App-Falconry-161D27?style=for-the-badge)](https://falconry.vercel.app/) [![Screenshots - Behance](https://img.shields.io/badge/Screenshots-Behance-1769ff?style=for-the-badge)](https://www.behance.net/gallery/188460931/Falconry-RSS-Reader)
+[![View App - Falconry](https://img.shields.io/badge/View_App-Falconry-161D27?style=for-the-badge)](https://falconry.site/) [![Screenshots - Behance](https://img.shields.io/badge/Screenshots-Behance-1769ff?style=for-the-badge)](https://www.behance.net/gallery/188460931/Falconry-RSS-Reader)
 
 
 ## Technologies Used
