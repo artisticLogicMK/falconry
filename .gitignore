@@ -19,6 +19,7 @@
 # misc
 .DS_Store
 *.pem
+/app/api/getUsersPosts
 
 # debug
 npm-debug.log*
